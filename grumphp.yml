@@ -1,0 +1,14 @@
+grumphp:
+    ascii:
+        failed: ~
+        succeeded: ~
+    tasks:
+        composer: ~
+        phpcs:
+            standard: ['PSR12']
+        phpversion:
+            project: '7.4'
+        psalm: ~
+        jsonlint:
+            detect_key_conflicts: true
+        yamllint: ~

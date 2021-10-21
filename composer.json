@@ -1,0 +1,22 @@
+{
+    "name": "pfaocle/dndbeyond-characters",
+    "description": "A small utility to grab D&D characters from the D&D Beyond public API.",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^7.3"
+    },
+    "authors": [
+        {
+            "name": "Paul Byrne",
+            "email": "code@pfaocle.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Pfaocle\\DndBeyondCharacters\\": "src/"}
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6",
+        "vimeo/psalm": "^4.10",
+        "phpro/grumphp": "^1.5"
+    }
+}
