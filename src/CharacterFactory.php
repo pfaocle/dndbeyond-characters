@@ -3,6 +3,7 @@
 namespace Pfaocle\DndBeyondCharacters;
 
 use Exception;
+use Pfaocle\DndBeyondCharacters\DndBeyond\Rules;
 
 class CharacterFactory
 {
@@ -18,14 +19,6 @@ class CharacterFactory
             throw new Exception('No character ID found in JSON.');
         }
 
-        $character = new Character(
-            $json->id,
-            $json->name
-        );
-
-        $character->setHitPoints($json->baseHitPoints, $json->removedHitPoints);
-        $character->setRace($json->race->fullName);
-
         // Classes and level.
         $level = 0;
         $classes = [];
@@ -33,8 +26,24 @@ class CharacterFactory
             $level += $class->level;
             $classes[] = $class->definition->name;
         }
-        $character->setLevel($level);
-        $character->setClasses($classes);
+
+        $character = new Character(
+            $json->id,
+            $json->name,
+            $json->race->fullName,
+            $level,
+            $classes
+        );
+
+        $base_con = $json->stats[2]->value;
+        // @todo Get any con bonuses...
+        $con = $base_con + 3;
+        $character->setConModifier(Rules::abilityScoreToModifier($con));
+
+        $character->setHitPoints(
+            $json->baseHitPoints,
+            $json->removedHitPoints
+        );
 
         $character->setCampaign($json->campaign ? $json->campaign->name : 'No campaign');
 

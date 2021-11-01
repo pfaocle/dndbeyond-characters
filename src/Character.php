@@ -6,18 +6,22 @@ class Character
 {
     protected $id;
     protected string $name;
-    protected int $maxHitPoints;
+    protected int $baseHitPoints;
     protected int $removedHitPoints = 0;
     protected string $race;
     protected int $level = 1;
     protected array $classes = [];
+    protected int $conModifier = 0;
     protected string $campaign = 'No campaign';
-    protected string $avatar = '';
+    protected string $avatar = 'default.png';
 
-    public function __construct(int $characterId, string $name)
+    public function __construct(int $characterId, string $name, string $race, int $level, array $classes = [])
     {
         $this->id = $characterId;
         $this->name = $name;
+        $this->race = $race;
+        $this->level = $level;
+        $this->classes = $classes;
     }
 
     public function id(): int
@@ -32,17 +36,17 @@ class Character
 
     public function maxHitPoints(): int
     {
-        return $this->maxHitPoints;
+        return $this->baseHitPoints + ($this->conModifier * $this->level);
     }
 
     public function currentHitPoints(): int
     {
-        return $this->maxHitPoints - $this->removedHitPoints;
+        return $this->maxHitPoints() - $this->removedHitPoints;
     }
 
-    public function setHitPoints(int $max, int $removed): void
+    public function setHitPoints(int $base, int $removed): void
     {
-        $this->maxHitPoints = $max;
+        $this->baseHitPoints = $base;
         $this->removedHitPoints = $removed;
     }
 
@@ -64,6 +68,11 @@ class Character
     public function setLevel(int $level): void
     {
         $this->level = $level;
+    }
+
+    public function setConModifier(int $modifier): void
+    {
+        $this->conModifier = $modifier;
     }
 
     public function class(): string
