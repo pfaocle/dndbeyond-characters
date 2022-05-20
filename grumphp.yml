@@ -4,6 +4,7 @@ grumphp:
         succeeded: ~
     tasks:
         composer: ~
+        pest: ~
         phpcs:
             standard: ['PSR12']
         phpversion:

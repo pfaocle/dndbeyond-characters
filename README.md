@@ -102,6 +102,7 @@ will then output a simple JSON representation of those characters.
 ## Tests
 
 ```
+./vendor/bin/pest
 ./vendor/bin/grumphp run
 ./vendor/bin/phpcs --standard=PSR12 src app.php
 ./vendor/bin/psalm --show-info=true
