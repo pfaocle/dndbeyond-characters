@@ -11,6 +11,7 @@
             "email": "code@pfaocle.co.uk"
         }
     ],
+    "license": "MIT",
     "autoload": {
         "psr-4": {"Pfaocle\\DndBeyondCharacters\\": "src/"}
     },
