@@ -1,6 +1,8 @@
 D&D Beyond Characters
 ===
 
+![Build](https://github.com/pfaocle/dndbeyond-characters/actions/workflows/php.yml/badge.svg)
+
 A small utility to grab D&D characters from the D&D Beyond public API.
 
 ## Install
