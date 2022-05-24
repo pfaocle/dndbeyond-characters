@@ -12,16 +12,24 @@ class Character
     protected int $level = 1;
     protected array $classes = [];
     protected int $conModifier = 0;
-    protected string $campaign = 'No campaign';
     protected string $avatar = 'default.png';
 
-    public function __construct(int $characterId, string $name, string $race, int $level, array $classes = [])
-    {
+    protected ?Campaign $campaign = null;
+
+    public function __construct(
+        int $characterId,
+        string $name,
+        string $race,
+        int $level,
+        array $classes = [],
+        Campaign $campaign = null
+    ) {
         $this->id = $characterId;
         $this->name = $name;
         $this->race = $race;
         $this->level = $level;
         $this->classes = $classes;
+        $this->campaign = $campaign;
     }
 
     public function id(): int
@@ -87,12 +95,12 @@ class Character
 
     public function campaign(): string
     {
-        return $this->campaign;
+        return isset($this->campaign) ? $this->campaign->name() : 'No campaign';
     }
 
     public function setCampaign(string $campaign): void
     {
-        $this->campaign = $campaign;
+        $this->campaign = new Campaign(0, $campaign);
     }
 
     public function avatar(): string
@@ -117,7 +125,7 @@ class Character
             'name' => $this->name,
             'raceclass' => sprintf("%s %s", $this->race, $this->class()),
             'level' => $this->level,
-            'campaign' => $this->campaign,
+            'campaign' => $this->campaign(),
             'hp' => sprintf("%d/%d", $this->currentHitPoints(), $this->maxHitPoints()),
             'avatar' => $this->avatar,
         ];
