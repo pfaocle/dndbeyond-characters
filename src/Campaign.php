@@ -2,6 +2,8 @@
 
 namespace Pfaocle\DndBeyondCharacters;
 
+use Pfaocle\DndBeyondCharacters\DndBeyond\Site;
+
 class Campaign
 {
     protected const CAMPAIGN_PATH_PATTERN = '/campaigns/%d';
@@ -28,5 +30,13 @@ class Campaign
     public function path(): string
     {
         return sprintf($this::CAMPAIGN_PATH_PATTERN, $this->id);
+    }
+
+    public function publicUrl($base_url = ''): string
+    {
+        if ($base_url === '') {
+            $base_url = Site::DND_BEYOND_SITE_BASE_URL;
+        }
+        return  $base_url . $this->path();
     }
 }
