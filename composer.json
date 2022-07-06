@@ -20,5 +20,11 @@
         "vimeo/psalm": "^4.10",
         "phpro/grumphp": "^1.5",
         "pestphp/pest": "^1.21"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpro/grumphp": true
+        }
     }
 }
