@@ -32,7 +32,7 @@ class Campaign
         return sprintf($this::CAMPAIGN_PATH_PATTERN, $this->id);
     }
 
-    public function publicUrl($base_url = ''): string
+    public function publicUrl(string $base_url = ''): string
     {
         if ($base_url === '') {
             $base_url = Site::DND_BEYOND_SITE_BASE_URL;
