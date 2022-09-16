@@ -76,6 +76,7 @@ return [
                         'name' => $character->name,
                         'raceclass' => $character->raceclass,
                         'level' => $character->level,
+                        'campaign_id' => $character->campaign_id,
                         'campaign' => $character->campaign,
                         'hp' => $character->hp,
                         'avatar' => $character->avatar,
