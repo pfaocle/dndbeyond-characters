@@ -50,3 +50,21 @@ test('json array returns expected result', function () {
         'avatar' => 'default.png',
     ]);
 });
+
+test('json array returns expected result with campaign', function () {
+    $this->character->setHitPoints(25, 0);
+    $this->character->setCampaign(1234567, 'The Dark Tower');
+    $ja = $this->character->jsonArray();
+
+    $this->assertIsArray($ja);
+    $this->assertEquals($ja, [
+        'id' => 1234567,
+        'name' => 'Sir Didymus',
+        'raceclass' => 'Knight of Yore Fighter/Bard',
+        'level' => 3,
+        'campaign_id' => 1234567,
+        'campaign' => 'The Dark Tower',
+        'hp' => '25/25',
+        'avatar' => 'default.png',
+    ]);
+});
