@@ -45,7 +45,7 @@ class CharacterFactory
             $json->removedHitPoints
         );
 
-        if (property_exists($json->campaign, 'id') && $json->campaign->name) {
+        if ($json->campaign && property_exists($json->campaign, 'id') && $json->campaign->name) {
             $character->setCampaign($json->campaign->id, $json->campaign->name);
         }
 
