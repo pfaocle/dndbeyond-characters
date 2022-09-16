@@ -3,10 +3,7 @@
 use Pfaocle\DndBeyondCharacters\DndBeyond\Rules;
 
 test('ability score modifiers are correct', function ($ability_score, $expected_modifier) {
-    $this->assertEquals(
-        Rules::abilityScoreToModifier($ability_score),
-        $expected_modifier
-    );
+    expect(Rules::abilityScoreToModifier($ability_score))->toBe($expected_modifier);
 })->with([
     [0, -5],
     [1, -5],

@@ -22,21 +22,21 @@ beforeeach(function () {
 test('valid character creation', function () {
     $character = CharacterFactory::createFromJson($this->data);
 
-    $this->assertTrue($character instanceof Character);
-    $this->assertEquals($character->id(), 1234567);
-    $this->assertEquals($character->name(), 'Sir Didymus');
-    $this->assertEquals($character->race(), 'Knight of Yore');
-    $this->assertEquals($character->class(), 'Cleric');
-    $this->assertEquals($character->level(), 3);
-    $this->assertEquals($character->campaign(), 'No campaign');
-    $this->assertEquals($character->avatar(), 'https://example.com/test.png');
+    expect($character instanceof Character)->toBeTrue();
+    expect($character->id())->toBe(1234567);
+    expect($character->name())->toBe('Sir Didymus');
+    expect($character->race())->toBe('Knight of Yore');
+    expect($character->class())->toBe('Cleric');
+    expect($character->level())->toBe(3);
+    expect($character->campaign())->toBe('No campaign');
+    expect($character->avatar())->toBe('https://example.com/test.png');
 });
 
 test('valid creation with empty avatar', function () {
     $data = $this->data;
     $data->decorations->avatarUrl = '';
     $character = CharacterFactory::createFromJson($data);
-    $this->assertEquals($character->avatar(), 'default.png');
+    expect($character->avatar())->toBe('default.png');
 });
 
 test('valid creation with multiple classes', function () {
@@ -46,8 +46,8 @@ test('valid creation with multiple classes', function () {
         (object) ['level' => 1, 'definition' => (object) ['name' => 'Bard']],
     ];
     $character = CharacterFactory::createFromJson($data);
-    $this->assertEquals($character->class(), 'Monk/Bard');
-    $this->assertEquals($character->level(), 4);
+    expect($character->class())->toBe('Monk/Bard');
+    expect($character->level())->toBe(4);
 });
 
 test('non-numeric id cannot be used', function () {
@@ -67,10 +67,10 @@ test('campaign', function () {
     $data->campaign = (object) ['id' => 1234567, 'name' => 'Quests of Yore'];
     $character = CharacterFactory::createFromJson($data);
 
-    $this->assertEquals($character->campaign(), 'Quests of Yore');
-    $this->assertEquals($character->campaignId(), 1234567);
+    expect($character->campaign())->toBe('Quests of Yore');
+    expect($character->campaignId())->toBe(1234567);
 
-    $this->assertEquals(get_class($character->campaignObject()), 'Pfaocle\DndBeyondCharacters\Campaign');
-    $this->assertEquals($character->campaignObject()->id(), 1234567);
-    $this->assertEquals($character->campaignObject()->name(), 'Quests of Yore');
+    expect(get_class($character->campaignObject()))->toBe('Pfaocle\DndBeyondCharacters\Campaign');
+    expect($character->campaignObject()->id())->toBe(1234567);
+    expect($character->campaignObject()->name())->toBe('Quests of Yore');
 });

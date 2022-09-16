@@ -7,13 +7,13 @@ beforeeach(function () {
 });
 
 test('create a campaign object', function () {
-    $this->assertTrue($this->campaign instanceof Campaign);
-    $this->assertEquals($this->campaign->id(), 1234567);
-    $this->assertEquals($this->campaign->name(), 'Test campaign');
+    expect($this->campaign instanceof Campaign)->toBeTrue();
+    expect($this->campaign->id())->toBe(1234567);
+    expect($this->campaign->name())->toBe('Test campaign');
 });
 
 test('campaign path and public url', function () {
-    $this->assertEquals($this->campaign->path(), '/campaigns/1234567');
-    $this->assertEquals($this->campaign->publicUrl(), 'https://www.dndbeyond.com/campaigns/1234567');
-    $this->assertEquals($this->campaign->publicUrl('https://example.com'), 'https://example.com/campaigns/1234567');
+    expect($this->campaign->path())->toBe('/campaigns/1234567');
+    expect($this->campaign->publicUrl())->toBe('https://www.dndbeyond.com/campaigns/1234567');
+    expect($this->campaign->publicUrl('https://example.com'))->toBe('https://example.com/campaigns/1234567');
 });

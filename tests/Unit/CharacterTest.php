@@ -13,17 +13,17 @@ beforeeach(function () {
 });
 
 test('create a character object', function () {
-    $this->assertTrue($this->character instanceof Character);
-    $this->assertEquals($this->character->id(), 1234567);
-    $this->assertEquals($this->character->name(), 'Sir Didymus');
-    $this->assertEquals($this->character->race(), 'Knight of Yore');
-    $this->assertEquals($this->character->level(), 3);
-    $this->assertEquals($this->character->class(), 'Fighter/Bard');
+    expect($this->character instanceof Character)->toBeTrue();
+    expect($this->character->id())->toBe(1234567);
+    expect($this->character->name())->toBe('Sir Didymus');
+    expect($this->character->race())->toBe('Knight of Yore');
+    expect($this->character->level())->toBe(3);
+    expect($this->character->class())->toBe('Fighter/Bard');
 });
 
 test('valid current hit points', function ($base, $removed, $expected) {
     $this->character->setHitPoints($base, $removed);
-    $this->assertEquals($this->character->currentHitPoints(), $expected);
+    expect($this->character->currentHitPoints())->toBe($expected);
 })->with([
     [25, 0, 25],
     [25, 10, 15],
@@ -38,8 +38,8 @@ test('json array returns expected result', function () {
     $this->character->setHitPoints(25, 0);
     $ja = $this->character->jsonArray();
 
-    $this->assertIsArray($ja);
-    $this->assertEquals($ja, [
+    expect($ja)->toBeArray();
+    expect($ja)->toBe([
         'id' => 1234567,
         'name' => 'Sir Didymus',
         'raceclass' => 'Knight of Yore Fighter/Bard',
@@ -56,8 +56,8 @@ test('json array returns expected result with campaign', function () {
     $this->character->setCampaign(1234567, 'The Dark Tower');
     $ja = $this->character->jsonArray();
 
-    $this->assertIsArray($ja);
-    $this->assertEquals($ja, [
+    expect($ja)->toBeArray();
+    expect($ja)->toBe([
         'id' => 1234567,
         'name' => 'Sir Didymus',
         'raceclass' => 'Knight of Yore Fighter/Bard',
