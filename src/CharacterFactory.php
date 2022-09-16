@@ -45,8 +45,8 @@ class CharacterFactory
             $json->removedHitPoints
         );
 
-        if ($json->campaign) {
-            $character->setCampaign($json->campaign->name);
+        if (property_exists($json->campaign, 'id') && $json->campaign->name) {
+            $character->setCampaign($json->campaign->id, $json->campaign->name);
         }
 
         if ($json->decorations->avatarUrl) {

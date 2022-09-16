@@ -98,9 +98,14 @@ class Character
         return isset($this->campaign) ? $this->campaign->name() : 'No campaign';
     }
 
-    public function setCampaign(string $campaign): void
+    public function campaignId(): ?int
     {
-        $this->campaign = new Campaign(0, $campaign);
+        return isset($this->campaign) ? $this->campaign->id() : null;
+    }
+
+    public function setCampaign(int $campaign_id, string $campaign): void
+    {
+        $this->campaign = new Campaign($campaign_id, $campaign);
     }
 
     public function avatar(): string
@@ -125,6 +130,7 @@ class Character
             'name' => $this->name,
             'raceclass' => sprintf("%s %s", $this->race, $this->class()),
             'level' => $this->level,
+            'campaign_id' => $this->campaignId(),
             'campaign' => $this->campaign(),
             'hp' => sprintf("%d/%d", $this->currentHitPoints(), $this->maxHitPoints()),
             'avatar' => $this->avatar,
