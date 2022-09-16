@@ -44,6 +44,7 @@ test('json array returns expected result', function () {
         'name' => 'Sir Didymus',
         'raceclass' => 'Knight of Yore Fighter/Bard',
         'level' => 3,
+        'campaign_id' => null,
         'campaign' => 'No campaign',
         'hp' => '25/25',
         'avatar' => 'default.png',
