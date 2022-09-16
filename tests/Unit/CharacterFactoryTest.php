@@ -62,10 +62,15 @@ test('id must be present', function () {
     CharacterFactory::createFromJson($data);
 })->throws(Exception::class, 'No character ID found in JSON.');
 
-test('campaign id', function () {
+test('campaign', function () {
     $data = $this->data;
     $data->campaign = (object) ['id' => 1234567, 'name' => 'Quests of Yore'];
     $character = CharacterFactory::createFromJson($data);
+
     $this->assertEquals($character->campaign(), 'Quests of Yore');
     $this->assertEquals($character->campaignId(), 1234567);
+
+    $this->assertEquals(get_class($character->campaignObject()), 'Pfaocle\DndBeyondCharacters\Campaign');
+    $this->assertEquals($character->campaignObject()->id(), 1234567);
+    $this->assertEquals($character->campaignObject()->name(), 'Quests of Yore');
 });

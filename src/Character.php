@@ -93,6 +93,11 @@ class Character
         $this->classes = $classes;
     }
 
+    public function campaignObject(): ?Campaign
+    {
+        return $this->campaign;
+    }
+
     public function campaign(): string
     {
         return isset($this->campaign) ? $this->campaign->name() : 'No campaign';
