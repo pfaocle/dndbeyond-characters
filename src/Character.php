@@ -6,15 +6,16 @@ class Character
 {
     protected $id;
     protected string $name;
-    protected int $baseHitPoints;
-    protected int $removedHitPoints = 0;
     protected string $race;
     protected int $level = 1;
     protected array $classes = [];
-    protected int $conModifier = 0;
-    protected string $avatar = 'default.png';
-
     protected ?Campaign $campaign = null;
+
+    protected int $conModifier = 0;
+    protected int $baseHitPoints = 10;
+    protected int $removedHitPoints = 0;
+
+    protected string $avatar = 'default.png';
 
     public function __construct(
         int $characterId,
