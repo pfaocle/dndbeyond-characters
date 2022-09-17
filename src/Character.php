@@ -93,19 +93,19 @@ class Character
         $this->classes = $classes;
     }
 
-    public function campaignObject(): ?Campaign
+    public function campaign(): ?Campaign
     {
         return $this->campaign;
-    }
-
-    public function campaign(): string
-    {
-        return isset($this->campaign) ? $this->campaign->name() : 'No campaign';
     }
 
     public function campaignId(): ?int
     {
         return isset($this->campaign) ? $this->campaign->id() : null;
+    }
+
+    public function campaignName(): string
+    {
+        return isset($this->campaign) ? $this->campaign->name() : 'No campaign';
     }
 
     public function setCampaign(int $campaign_id, string $campaign): void
@@ -136,7 +136,7 @@ class Character
             'raceclass' => sprintf("%s %s", $this->race, $this->class()),
             'level' => $this->level,
             'campaign_id' => $this->campaignId(),
-            'campaign' => $this->campaign(),
+            'campaign' => $this->campaignName(),
             'hp' => sprintf("%d/%d", $this->currentHitPoints(), $this->maxHitPoints()),
             'avatar' => $this->avatar,
         ];

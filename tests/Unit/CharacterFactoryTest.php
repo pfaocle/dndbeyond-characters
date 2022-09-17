@@ -28,7 +28,7 @@ test('valid character creation', function () {
     expect($character->race())->toBe('Knight of Yore');
     expect($character->class())->toBe('Cleric');
     expect($character->level())->toBe(3);
-    expect($character->campaign())->toBe('No campaign');
+    expect($character->campaignName())->toBe('No campaign');
     expect($character->avatar())->toBe('https://example.com/test.png');
 });
 
@@ -67,10 +67,10 @@ test('campaign', function () {
     $data->campaign = (object) ['id' => 1234567, 'name' => 'Quests of Yore'];
     $character = CharacterFactory::createFromJson($data);
 
-    expect($character->campaign())->toBe('Quests of Yore');
+    expect($character->campaignName())->toBe('Quests of Yore');
     expect($character->campaignId())->toBe(1234567);
 
-    expect(get_class($character->campaignObject()))->toBe('Pfaocle\DndBeyondCharacters\Campaign');
-    expect($character->campaignObject()->id())->toBe(1234567);
-    expect($character->campaignObject()->name())->toBe('Quests of Yore');
+    expect(get_class($character->campaign()))->toBe('Pfaocle\DndBeyondCharacters\Campaign');
+    expect($character->campaign()->id())->toBe(1234567);
+    expect($character->campaign()->name())->toBe('Quests of Yore');
 });
