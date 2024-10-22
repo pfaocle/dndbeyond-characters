@@ -25,6 +25,7 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "phpro/grumphp": true
-        }
+        },
+        "sort-packages": true
     }
 }
