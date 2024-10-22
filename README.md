@@ -5,6 +5,12 @@ D&D Beyond Characters
 
 A small utility to grab D&D characters from the D&D Beyond public API.
 
+## Dependencies
+
+- PHP >=8.3
+- [guzzlehhttp/guzzle](https://github.com/guzzlehttp/guzzle/)
+
+
 ## Install
 
 Install with Composer:
