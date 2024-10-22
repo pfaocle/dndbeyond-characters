@@ -17,7 +17,7 @@
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.6",
-        "vimeo/psalm": "^4.10",
+        "vimeo/psalm": "^5.26",
         "phpro/grumphp": "^1.5",
         "pestphp/pest": "^1.21"
     },
