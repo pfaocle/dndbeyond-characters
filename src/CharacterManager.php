@@ -45,7 +45,7 @@ class CharacterManager
         foreach ($this->originalIds as $id) {
             $response = $this->client->getCharacter($id);
             if ($response->getStatusCode() === 200) {
-                $characterData = json_decode($response->getBody());
+                $characterData = json_decode((string) $response->getBody());
                 $this->characters[] = CharacterFactory::createFromJson($characterData->data);
             }
         }
