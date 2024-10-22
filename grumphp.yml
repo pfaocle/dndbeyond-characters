@@ -8,7 +8,7 @@ grumphp:
         phpcs:
             standard: ['PSR12']
         phpversion:
-            project: '7.4'
+            project: '8.3'
         psalm: ~
         jsonlint:
             detect_key_conflicts: true
