@@ -111,6 +111,6 @@ will then output a simple JSON representation of those characters.
 ./vendor/bin/psalm --show-info=true
 ```
 
-[Jigsaw]: https://jigsaw.tighten.co/
-[Event Listener]: https://jigsaw.tighten.co/docs/event-listeners/
-[Remote Collection]: https://jigsaw.tighten.co/docs/collections-remote-collections/
+[Jigsaw]: https://jigsaw.tighten.com/
+[Event Listener]: https://jigsaw.tighten.com/docs/event-listeners/
+[Remote Collection]: https://jigsaw.tighten.com/docs/collections-remote-collections/
