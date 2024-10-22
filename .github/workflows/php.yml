@@ -44,12 +44,12 @@ jobs:
 
     - name: Coding standards
       run: ./vendor/bin/phpcs --standard=PSR12 src app.php
-      
+
     - name: Psalm checks
       run: ./vendor/bin/psalm
-    
+
     - name: Unit tests
       run: ./vendor/bin/pest --exclude-group=api
-      
+
     - name: API tests
       run: ./vendor/bin/pest --group=api
