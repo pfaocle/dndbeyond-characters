@@ -10,7 +10,7 @@ class Client
     /**
      * The D&D Beyond public API base URL.
      */
-    private const BASE_URL = 'https://character-service.dndbeyond.com';
+    private const string BASE_URL = 'https://character-service.dndbeyond.com';
 
     /**
      * @var \GuzzleHttp\Client $client
