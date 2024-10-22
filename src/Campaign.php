@@ -6,7 +6,7 @@ use Pfaocle\DndBeyondCharacters\DndBeyond\Site;
 
 class Campaign
 {
-    protected const CAMPAIGN_PATH_PATTERN = '/campaigns/%d';
+    protected const string CAMPAIGN_PATH_PATTERN = '/campaigns/%d';
 
     protected int $id;
     protected string $name;
