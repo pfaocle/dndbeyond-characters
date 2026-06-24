@@ -3,7 +3,7 @@
     errorLevel="7"
     findUnusedVariablesAndParams="true"
     findUnusedCode="false"
-    phpVersion="8.3"
+    phpVersion="8.4"
     resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"

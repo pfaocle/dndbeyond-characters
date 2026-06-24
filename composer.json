@@ -10,14 +10,14 @@
     ],
     "license": "MIT",
     "require": {
-        "guzzlehttp/guzzle": "^7.9",
-        "php": ">=8.3"
+        "php": ">=8.4",
+        "guzzlehttp/guzzle": "^7.12"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.6",
-        "vimeo/psalm": "^5.26",
-        "phpro/grumphp": "^1.16",
-        "pestphp/pest": "^2.36"
+        "pestphp/pest": "^4.7",
+        "phpro/grumphp": "^2.21",
+        "squizlabs/php_codesniffer": "^3.7",
+        "vimeo/psalm": "^6.16"
     },
     "autoload": {
         "psr-4": {"Pfaocle\\DndBeyondCharacters\\": "src/"}
