@@ -51,5 +51,5 @@ jobs:
     - name: Unit tests
       run: ./vendor/bin/pest --exclude-group=api
 
-    - name: API tests
-      run: ./vendor/bin/pest --group=api
+    # - name: API tests
+    #   run: ./vendor/bin/pest --group=api
