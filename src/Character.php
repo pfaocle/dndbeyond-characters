@@ -23,7 +23,7 @@ class Character
         string $race,
         int $level,
         array $classes = [],
-        Campaign $campaign = null
+        ?Campaign $campaign = null
     ) {
         $this->id = $characterId;
         $this->name = $name;
