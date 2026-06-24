@@ -10,7 +10,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": ">=8.4",
+        "php": ">=8.3",
         "guzzlehttp/guzzle": "^7.12"
     },
     "require-dev": {
