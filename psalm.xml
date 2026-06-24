@@ -9,13 +9,6 @@
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
 >
-    <issueHandlers>
-        <UndefinedGlobalVariable>
-            <errorLevel type="suppress">
-              <file name="app.php" />
-            </errorLevel>
-        </UndefinedGlobalVariable>
-    </issueHandlers>
     <projectFiles>
         <directory name="src" />
         <ignoreFiles>
