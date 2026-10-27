@@ -5,7 +5,7 @@ namespace Pfaocle\DndBeyondCharacters;
 use Exception;
 use Pfaocle\DndBeyondCharacters\DndBeyond\Rules;
 
-class CharacterFactory
+final class CharacterFactory
 {
     /**
      * @param object $json

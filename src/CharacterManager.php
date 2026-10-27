@@ -4,7 +4,7 @@ namespace Pfaocle\DndBeyondCharacters;
 
 use Pfaocle\DndBeyondCharacters\DndBeyond\Client;
 
-class CharacterManager
+final class CharacterManager
 {
     /**
      * @var \Pfaocle\DndBeyondCharacters\DndBeyond\Client $client

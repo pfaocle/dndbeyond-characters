@@ -2,7 +2,7 @@
 
 namespace Pfaocle\DndBeyondCharacters;
 
-class Character
+final class Character
 {
     protected $id;
     protected string $name;

@@ -2,7 +2,7 @@
 
 namespace Pfaocle\DndBeyondCharacters\DndBeyond;
 
-class Rules
+final class Rules
 {
     public static function abilityScoreToModifier(int $abilityScore): int
     {

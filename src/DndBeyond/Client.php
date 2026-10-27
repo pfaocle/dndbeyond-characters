@@ -5,7 +5,7 @@ namespace Pfaocle\DndBeyondCharacters\DndBeyond;
 use GuzzleHttp\Client as GuzzleClient;
 use Psr\Http\Message\ResponseInterface;
 
-class Client
+final class Client
 {
     /**
      * The D&D Beyond public API base URL.

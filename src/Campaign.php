@@ -4,7 +4,7 @@ namespace Pfaocle\DndBeyondCharacters;
 
 use Pfaocle\DndBeyondCharacters\DndBeyond\Site;
 
-class Campaign
+final class Campaign
 {
     protected const string CAMPAIGN_PATH_PATTERN = '/campaigns/%d';
 
