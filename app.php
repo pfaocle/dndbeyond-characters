@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Pfaocle\DndBeyondCharacters\CharacterManager;
 
-require_once './vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 const CONFIG_FILENAME = 'config.php';
 $config_file = __DIR__ . DIRECTORY_SEPARATOR . CONFIG_FILENAME;

@@ -9,24 +9,24 @@ use Pfaocle\DndBeyondCharacters\DndBeyond\Client;
 final class CharacterManager
 {
     /**
-     * @var \Pfaocle\DndBeyondCharacters\DndBeyond\Client $client
+     * @var \Pfaocle\DndBeyondCharacters\DndBeyond\Client
      */
-    protected $client;
+    protected Client $client;
 
     /**
-     * @var array $originalIds
+     * @var int[]
      */
-    private $originalIds;
+    private array $originalIds;
 
     /**
-     * @var \Pfaocle\DndBeyondCharacters\Character[] $characters
+     * @var \Pfaocle\DndBeyondCharacters\Character[]
      */
-    protected $characters = [];
+    protected array $characters = [];
 
     /**
-     * Construct a new list of characters based on  a list of character IDs.
+     * Construct a new list of characters based on a list of character IDs.
      *
-     * @param array $characterIds
+     * @param int[]|array<int> $characterIds
      */
     public function __construct(array $characterIds)
     {
@@ -72,8 +72,6 @@ final class CharacterManager
 
     /**
      * Return a JSON representation of all characters.
-     *
-     * @return false|string
      */
     public function json(): string|false
     {

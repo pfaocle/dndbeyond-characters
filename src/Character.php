@@ -6,10 +6,11 @@ namespace Pfaocle\DndBeyondCharacters;
 
 final class Character
 {
-    protected $id;
+    protected int $id;
     protected string $name;
     protected string $race;
     protected int $level = 1;
+    /** @var string[] */
     protected array $classes = [];
     protected ?Campaign $campaign = null;
 
@@ -19,6 +20,9 @@ final class Character
 
     protected string $avatar = 'default.png';
 
+    /**
+     * @param string[] $classes
+     */
     public function __construct(
         int $characterId,
         string $name,

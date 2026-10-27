@@ -14,16 +14,16 @@ final class Client
      */
     private const string BASE_URL = 'https://character-service.dndbeyond.com';
 
-    /**
-     * @var \GuzzleHttp\Client $client
-     */
-    protected $client;
+    protected GuzzleClient $client;
 
     public function __construct()
     {
         $this->client = new GuzzleClient(['base_uri' => $this::BASE_URL]);
     }
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function get(string $uri, array $options = []): ResponseInterface
     {
         return $this->client->get($uri, $options);

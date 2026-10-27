@@ -39,6 +39,6 @@ final class Campaign
         if ($base_url === '') {
             $base_url = Site::DND_BEYOND_SITE_BASE_URL;
         }
-        return  $base_url . $this->path();
+        return $base_url . $this->path();
     }
 }
