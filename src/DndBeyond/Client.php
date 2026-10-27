@@ -16,9 +16,9 @@ final class Client
 
     protected GuzzleClient $client;
 
-    public function __construct()
+    public function __construct(?GuzzleClient $client = null)
     {
-        $this->client = new GuzzleClient(['base_uri' => $this::BASE_URL]);
+        $this->client = $client ?? new GuzzleClient(['base_uri' => self::BASE_URL]);
     }
 
     /**

@@ -28,9 +28,9 @@ final class CharacterManager
      *
      * @param int[]|array<int> $characterIds
      */
-    public function __construct(array $characterIds)
+    public function __construct(array $characterIds, ?Client $client = null)
     {
-        $this->client = new Client();
+        $this->client = $client ?? new Client();
         $this->originalIds = $characterIds;
         $this->fetch();
     }
