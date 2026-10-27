@@ -68,8 +68,12 @@ final class CharacterManager
         return $out;
     }
 
-    // Return a JSON representation of all characters.
-    public function json(): string
+    /**
+     * Return a JSON representation of all characters.
+     *
+     * @return false|string
+     */
+    public function json(): string|false
     {
         return json_encode($this->list(), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     }
