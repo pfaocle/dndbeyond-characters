@@ -61,6 +61,19 @@ final class CharacterManager
         return $this->characters;
     }
 
+    public function first(): ?Character
+    {
+        return $this->characters[0] ?? null;
+    }
+
+    public function count(): int
+    {
+        return count($this->characters);
+    }
+
+    /**
+     * @return array<int, array<string, mixed>>
+     */
     public function list(): array
     {
         $out = [];
