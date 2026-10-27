@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Pfaocle\DndBeyondCharacters;
 
-final class Character
+final class Character implements \JsonSerializable
 {
     protected int $id;
     protected string $name;
@@ -168,5 +168,14 @@ final class Character
             'hp' => sprintf('%d/%d', $this->currentHitPoints(), $this->maxHitPoints()),
             'avatar' => $this->avatar,
         ];
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    #[\Override]
+    public function jsonSerialize(): array
+    {
+        return $this->jsonArray();
     }
 }
