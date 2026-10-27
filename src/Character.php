@@ -95,6 +95,17 @@ final class Character
         return implode('/', $this->classes);
     }
 
+    /**
+     * @return string[]
+     */
+    public function classes(): array
+    {
+        return $this->classes;
+    }
+
+    /**
+     * @param string[] $classes
+     */
     public function setClasses(array $classes): void
     {
         $this->classes = $classes;
