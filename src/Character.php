@@ -131,20 +131,30 @@ final class Character
     }
 
     /**
+     * Return a string representing the character's race and class.
+     *
+     * @return string
+     */
+    public function raceClass(): string
+    {
+        return sprintf('%s %s', $this->race, $this->class());
+    }
+
+    /**
      * Return an array representing the character that can be used for JSON output.
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function jsonArray(): array
     {
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'raceclass' => sprintf("%s %s", $this->race, $this->class()),
+            'raceclass' => $this->raceClass(),
             'level' => $this->level,
             'campaign_id' => $this->campaignId(),
             'campaign' => $this->campaignName(),
-            'hp' => sprintf("%d/%d", $this->currentHitPoints(), $this->maxHitPoints()),
+            'hp' => sprintf('%d/%d', $this->currentHitPoints(), $this->maxHitPoints()),
             'avatar' => $this->avatar,
         ];
     }
