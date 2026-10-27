@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pfaocle\DndBeyondCharacters;
 
 use Pfaocle\DndBeyondCharacters\DndBeyond\Site;

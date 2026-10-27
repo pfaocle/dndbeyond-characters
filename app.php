@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Pfaocle\DndBeyondCharacters\CharacterManager;
 
 require_once './vendor/autoload.php';
