@@ -10,10 +10,7 @@ use Pfaocle\DndBeyondCharacters\DndBeyond\Rules;
 final class CharacterFactory
 {
     /**
-     * @param object $json
-     *   The character data as JSON object.
-     *
-     * @return \Pfaocle\DndBeyondCharacters\Character
+     * @param object $json The character data as JSON object.
      */
     public static function createFromJson(object $json): Character
     {
